@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HolyClout</string>
+    <string name="holy_title_hint">Enter a title for the holy act</string>
+    <string name="holy_title_label">Title</string>
+    <string name="holy_details_label">Details</string>
+    <string name="holy_blessing_label">Blessed</string>
 </resources>
