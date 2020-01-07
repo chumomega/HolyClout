@@ -8,16 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import static android.widget.CompoundButton.*;
+
 public class HolyFragment extends Fragment {
     private Holydeed holyDeed;
     private EditText titleField;
     private Button dateButton;
+    private CheckBox blessedCheckBox;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,9 +53,20 @@ public class HolyFragment extends Fragment {
             }
         });
 
+        //wire up date button
         dateButton = view.findViewById(R.id.holy_act_date);
         dateButton.setText(holyDeed.getDate().toString());
         dateButton.setEnabled(false);
+
+        //wire up blessed checkbox
+        blessedCheckBox = view.findViewById(R.id.holy_act_blessed);
+        blessedCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                holyDeed.setBlessed(b);
+            }
+        });
+
 
         return view;
     }
