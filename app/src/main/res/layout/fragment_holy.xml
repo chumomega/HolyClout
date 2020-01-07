@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/crime_date"
+        android:id="@+id/holy_act_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
